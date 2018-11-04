@@ -1,0 +1,51 @@
+// Bootstrap overrides for this template
+.text-primary {
+  color: $primary !important;
+}
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  @include sans-serif-font;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($primary, 5%) !important;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem $secondary    !important;
+  }
+}
+
+.form-control, .form-control:focus {
+  background-color: $primary  ;
+  color: $gray-600;
+}
+
+.modal-dialog {
+  max-width: 95% !important;
+}
+.modal-content {
+  background-color: $primary !important;
+}
+.modal-header {
+   display: block;
+   border: none;
+   color: $gray-100
+ }
+.modal-footer {
+  border: none;
+}
