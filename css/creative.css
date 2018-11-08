@@ -328,6 +328,11 @@ header.masthead p {
   display: block;
 }
 
+.carousel-item img {
+  height: calc(100vh - 120px);
+  margin: auto;
+}
+
 .text-primary {
   color: #1e2126 !important;
 }

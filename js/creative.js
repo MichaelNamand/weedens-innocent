@@ -74,7 +74,7 @@
   });
     var url = $("#cartoonVideo").attr('src');
 
-  $.getJSON("/json/videos.json", function(json) {
+  $.getJSON("./json/videos.json", function(json) {
         console.log(json); // this will show the info it in firebug console
         var divGallery = document.getElementById('gallery');
         for (var i = 0; i < json.length; i++) {
@@ -145,7 +145,29 @@
         $("#cartoonVideo").attr('src', url);
     });
 
+
+    var form = document.getElementById('myform');
+    function onSubmit(event) {
+
+        if (event) {event.preventDefault();}
+        // Change to your service ID, or keep using the default service
+
+        var inputs = form.querySelectorAll('input');
+        var text = form.querySelector('textarea');
+        form.querySelector('button').textContent = 'Envoie...';
+        emailjs.send("gmail", "template_r6IvQ2bv", {"from_name": inputs[0].value + ' (' + inputs[1].value + ')',"to_name":"Weedens","message_html": text.value})
+            .then(function(){
+                alert("Votre message a bien été envoyé !");
+                form.querySelector('button').textContent = 'Envoyer';
+            }, function(err) {
+                alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+                form.querySelector('button').textContent = 'Envoyer';
+            });
+        return false;
+    }
+    form.addEventListener('submit', onSubmit, false);
+    form.submit = onSubmit;
+
 })(jQuery); // End of use strict
-function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-}
+
+emailjs.init("user_hgvtT0eeK71LJYR8Ny6x4");
