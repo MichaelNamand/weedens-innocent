@@ -2,7 +2,7 @@
 <html lang="fr">
 <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
 <script type="text/javascript">
-    (function(){
+    (function () {
         emailjs.init("user_hgvtT0eeK71LJYR8Ny6x4");
     })();
 </script>
@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Weedens Innocent - Video Specialist</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,7 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -133,7 +134,9 @@
 <section class="pt-5" id="portfolio">
     <div class="container-fluid text-center p-0">
         <h3 class="text-white text-uppercase mb-3">Mes réalisations</h3>
-        <div class="row no-gutters popup-gallery" id="gallery">
+
+        <div class="card-columns">
+            <div class="no-gutters popup-gallery" id="gallery"></div>
         </div>
     </div>
 </section>
@@ -188,7 +191,7 @@
                     vous répondrai dans les plus brefs délais !</p>
             </div>
         </div>
-        <form class="w-75 m-auto" id="myform" >
+        <form class="w-75 m-auto" id="myform">
             <div class="form-row">
                 <div class="form-group col-12 col-lg-6">
                     <label for="exampleInputPassword1">Nom</label>
@@ -196,7 +199,8 @@
                 </div>
                 <div class="form-group col-12 col-lg-6">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                           required>
                 </div>
             </div>
 
@@ -210,16 +214,57 @@
         </form>
     </div>
 </section>
+<footer class="footer">
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-sm">
+                <span style="line-height: 40px;">Paris, France</span>
+            </div>
+            <div class="col-sm">
+                <span style="line-height: 40px;">weedens.innoncent@gmail.com</span>
+            </div>
+            <div class="col-sm">
+                <ul class="social-icon animate pull-right">
+                    <li><a href="https://www.facebook.com/Weedens.Productions/?ref=br_rs" title="facebook"
+                           target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <!-- change the link to social page and edit title-->
+                    <li><a href="https://www.linkedin.com/in/weedensi/" title="twitter" target="_blank"><i
+                            class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/Weedens93200" title="google plus" target="_blank"><i
+                            class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 <!-- Modal HTML -->
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="modal-title"></h4>
+                <button type="button" class="btn btn-primary float-right close-btn" data-dismiss="modal"
+                        aria-hidden="true">x
+                </button>
             </div>
             <div class="modal-body">
-                <iframe id="cartoonVideo" height="400px" width="100%"
-                        frameborder="0" allowfullscreen></iframe>
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <iframe id="cartoonVideo" height="400px" width="100%"
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <p class="text-muted">Mon rôle : <span id="role-video" class="text-white"></span></p>
+                        <p class="text-muted">Date : <span id="date-video" class="text-white"></span></p>
+                        <p class="text-muted">Description : <br><span id="description-video" class="text-white"></span>
+                        </p>
+                        <p class="text-muted">Catégorie : <span id="category-video" class="text-white"></span></p>
+
+                    </div>
+                </div>
+                <h4 class="text-white mt-3">Autres vidéos :</h4>
+
+                <div id="next-videos" class="row"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
